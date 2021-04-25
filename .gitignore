@@ -1,0 +1,5 @@
+.idea
+config/settings.dev.yml
+vendor
+logs
+static/uploadfile
