@@ -9,11 +9,11 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:           "octet",
+	Use:           "fs",
 	Short:         "-v",
 	SilenceErrors: true,
 	DisableAutoGenTag:true,
-	Long:	`octet`,
+	Long:	`fs`,
 	Args: func(cmd *cobra.Command, args []string) error {
 		if len(args) < 1 {
 			return errors.New("requires at least one arg")
@@ -25,7 +25,7 @@ var rootCmd = &cobra.Command{
 		return nil
 	},
 	Run: func(cmd *cobra.Command, args []string) {
-		usageStr := "欢迎使用 octet, 可以使用 -h 查看命令"
+		usageStr := "欢迎使用 fs, 可以使用 -h 查看命令"
 		logger.Infof("%s\n", usageStr)
 	},
 }

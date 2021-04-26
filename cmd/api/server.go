@@ -19,7 +19,7 @@ var (
 	StartCmd = &cobra.Command{
 		Use:     "server",
 		Short:   "Start API server",
-		Example: "octet server config/setting.yaml",
+		Example: "fs server config/setting.yaml",
 		PreRun: func(cmd *cobra.Command, args []string) {
 			usage()
 			setup()
