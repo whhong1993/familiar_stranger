@@ -3,7 +3,7 @@ package config
 import "github.com/spf13/viper"
 
 type Jwt struct {
-	Secret string
+	Secret  string
 	Timeout int64
 }
 

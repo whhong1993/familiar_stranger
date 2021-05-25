@@ -1,15 +1,15 @@
 package api
 
 import (
-	"github.com/gin-gonic/gin"
-	"github.com/spf13/cobra"
-	"github.com/spf13/viper"
-	"log"
 	"fs/database"
 	"fs/pkg/task"
 	"fs/router"
 	"fs/tools"
 	config2 "fs/tools/config"
+	"github.com/gin-gonic/gin"
+	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
+	"log"
 )
 
 var (
@@ -26,7 +26,7 @@ var (
 		},
 		RunE: func(cmd *cobra.Command, args []string) error {
 			return run()
-		}, 
+		},
 	}
 )
 
@@ -36,7 +36,6 @@ func init() {
 	StartCmd.PersistentFlags().StringVarP(&mode, "mode", "m", "dev", "Server mode; eg: dev, test, prod")
 }
 
-
 func usage() {
 	usageStr := `Starting api server`
 	log.Printf("%s\n", usageStr)
@@ -45,7 +44,7 @@ func usage() {
 func setup() {
 
 	// 1. 读取配置
-	config2.ConfigSetup(config)
+	config2.Setup(config)
 	// 2. 初始化数据库
 	database.Setup()
 	// 3. 启动异步任务队列

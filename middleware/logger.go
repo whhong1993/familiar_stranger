@@ -1,8 +1,8 @@
 package middleware
 
 import (
-	"github.com/gin-gonic/gin"
 	"fs/pkg/logger"
+	"github.com/gin-gonic/gin"
 	"time"
 )
 

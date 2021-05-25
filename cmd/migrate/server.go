@@ -2,10 +2,10 @@ package migrate
 
 import (
 	"fmt"
-	"github.com/spf13/cobra"
 	"fs/database"
 	"fs/golbal/orm"
 	config2 "fs/tools/config"
+	"github.com/spf13/cobra"
 )
 
 var (
@@ -30,7 +30,7 @@ func run() {
 	fmt.Println(usage)
 
 	//1. 读取配置
-	config2.ConfigSetup(config)
+	config2.Setup(config)
 	//2. 初始化数据库连接
 	database.Setup()
 	//3. 数据库迁移

@@ -2,18 +2,18 @@ package cmd
 
 import (
 	"errors"
-	"github.com/spf13/cobra"
 	"fs/cmd/api"
 	"fs/pkg/logger"
+	"github.com/spf13/cobra"
 	"os"
 )
 
 var rootCmd = &cobra.Command{
-	Use:           "fs",
-	Short:         "-v",
-	SilenceErrors: true,
-	DisableAutoGenTag:true,
-	Long:	`fs`,
+	Use:               "fs",
+	Short:             "-v",
+	SilenceErrors:     true,
+	DisableAutoGenTag: true,
+	Long:              `fs`,
 	Args: func(cmd *cobra.Command, args []string) error {
 		if len(args) < 1 {
 			return errors.New("requires at least one arg")

@@ -1,11 +1,11 @@
 package router
 
 import (
-	"github.com/gin-gonic/gin"
 	"fs/handler"
 	"fs/middleware"
 	"fs/tools"
 	config2 "fs/tools/config"
+	"github.com/gin-gonic/gin"
 )
 
 func InitRouter() *gin.Engine {

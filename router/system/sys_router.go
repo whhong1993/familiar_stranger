@@ -1,9 +1,9 @@
 package system
 
 import (
-	"github.com/gin-gonic/gin"
 	"fs/handler"
 	"fs/system"
+	"github.com/gin-gonic/gin"
 )
 
 func SysBaseRouter(r *gin.RouterGroup) {
@@ -16,4 +16,3 @@ func SysNoCheckRoleRouter(r *gin.RouterGroup) {
 
 	v1.GET("/monitor/server")
 }
-

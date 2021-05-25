@@ -25,12 +25,12 @@ func Init() {
 	var syncWriters []zapcore.WriteSyncer
 	level := getLoggerLevel(viper.GetString(`settings.log.level`))
 	fileConfig := &lumberjack.Logger{
-		Filename:   viper.GetString(`settings.log.path`),	// 日志文件名
-		MaxSize:    viper.GetInt(`settings.log.maxsize`),	// 日志文件大小
-		MaxAge:     viper.GetInt(`settings.log.maxAge`),	// 最长保存天数
-		MaxBackups: viper.GetInt(`settings.log.maxBackups`),	// 最多备份几个
-		LocalTime:  viper.GetBool(`settings.log.localtime`),	// 日志时间戳
-		Compress:   viper.GetBool(`settings.log.compress`),	// 是否压缩文件，使用 gzip
+		Filename:   viper.GetString(`settings.log.path`),    // 日志文件名
+		MaxSize:    viper.GetInt(`settings.log.maxsize`),    // 日志文件大小
+		MaxAge:     viper.GetInt(`settings.log.maxAge`),     // 最长保存天数
+		MaxBackups: viper.GetInt(`settings.log.maxBackups`), // 最多备份几个
+		LocalTime:  viper.GetBool(`settings.log.localtime`), // 日志时间戳
+		Compress:   viper.GetBool(`settings.log.compress`),  // 是否压缩文件，使用 gzip
 	}
 
 	encoder := zap.NewProductionEncoderConfig()
@@ -52,7 +52,6 @@ func Init() {
 	logger := zap.New(core, zap.AddCaller(), zap.AddCallerSkip(1))
 	log = logger.Sugar()
 }
-
 
 func getLoggerLevel(lvl string) zapcore.Level {
 	if level, ok := levelMap[lvl]; ok {
@@ -100,7 +99,6 @@ func Dpanic(args ...interface{}) {
 func Dpanicf(format string, args ...interface{}) {
 	log.DPanicf(format, args...)
 }
-
 
 func Fatal(args ...interface{}) {
 	log.Fatal(args...)

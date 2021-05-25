@@ -1,9 +1,10 @@
 package handler
 
 import (
-	"github.com/mojocn/base64Captcha"
 	jwt "fs/pkg/jwtauth"
+	"github.com/mojocn/base64Captcha"
 )
+
 var store = base64Captcha.DefaultMemStore
 
 func PayloadFunc(data interface{}) jwt.MapClaims {

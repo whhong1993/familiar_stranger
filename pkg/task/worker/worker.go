@@ -1,11 +1,11 @@
 package worker
 
 import (
+	"fs/pkg/logger"
 	"github.com/RichardKnop/machinery/v1"
 	taskConfig "github.com/RichardKnop/machinery/v1/config"
 	"github.com/RichardKnop/machinery/v1/tasks"
 	"github.com/spf13/viper"
-	"fs/pkg/logger"
 )
 
 var AsyncTaskCenter *machinery.Server
@@ -30,7 +30,7 @@ func NewTaskCenter() (*machinery.Server, error) {
 		return nil, err
 	}
 	initAsyncTaskMap()
-	return  server, server.RegisterTasks(asyncTaskMap)
+	return server, server.RegisterTasks(asyncTaskMap)
 }
 
 func NewAsyncTaskWorker(concurrency int) *machinery.Worker {

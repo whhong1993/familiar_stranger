@@ -2,9 +2,9 @@ package config
 
 import (
 	"fmt"
+	"fs/pkg/logger"
 	"github.com/spf13/viper"
 	"io/ioutil"
-	"fs/pkg/logger"
 	"os"
 	"strings"
 )
@@ -14,9 +14,8 @@ var cfgApplication *viper.Viper
 var cfgJwt *viper.Viper
 var cfgSsl *viper.Viper
 
-
 // 载入配置文件
-func ConfigSetup(path string) {
+func Setup(path string) {
 	viper.SetConfigFile(path)
 	content, err := ioutil.ReadFile(path)
 	if err != nil {

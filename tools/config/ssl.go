@@ -4,7 +4,7 @@ import "github.com/spf13/viper"
 
 type Ssl struct {
 	KeyStr string
-	Pem string
+	Pem    string
 }
 
 func InitSsl(cfg *viper.Viper) *Ssl {

@@ -1,8 +1,8 @@
 package tools
 
 import (
-	"golang.org/x/crypto/bcrypt"
 	"fs/pkg/logger"
+	"golang.org/x/crypto/bcrypt"
 	"strconv"
 )
 

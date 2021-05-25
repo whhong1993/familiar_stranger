@@ -3,11 +3,11 @@ package jwtauth
 import (
 	"crypto/rsa"
 	"errors"
+	config2 "fs/tools/config"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
 	"io/ioutil"
 	"net/http"
-	config2 "fs/tools/config"
 	"strings"
 	"time"
 )
@@ -139,7 +139,6 @@ var (
 
 	RoleNameKey = "rolename"
 )
-
 
 // New for check error with GinJWTMiddleware
 func New(m *GinJWTMiddleware) (*GinJWTMiddleware, error) {
@@ -479,7 +478,6 @@ func (mw *GinJWTMiddleware) RefreshToken(c *gin.Context) (string, time.Time, err
 	return tokenString, expire, nil
 }
 
-
 // CheckIfTokenExpire check if token expire
 func (mw *GinJWTMiddleware) CheckIfTokenExpire(c *gin.Context) (jwt.MapClaims, error) {
 	token, err := mw.ParseToken(c)
@@ -574,7 +572,6 @@ func (mw *GinJWTMiddleware) jwtFromParam(c *gin.Context, key string) (string, er
 	return token, nil
 }
 
-
 // ParseToken parse jwt token from gin context
 func (mw *GinJWTMiddleware) ParseToken(c *gin.Context) (*jwt.Token, error) {
 	var token string
@@ -617,7 +614,6 @@ func (mw *GinJWTMiddleware) ParseToken(c *gin.Context) (*jwt.Token, error) {
 	})
 }
 
-
 // ParseTokenString parse jwt token string
 func (mw *GinJWTMiddleware) ParseTokenString(token string) (*jwt.Token, error) {
 	return jwt.Parse(token, func(t *jwt.Token) (interface{}, error) {
@@ -632,7 +628,6 @@ func (mw *GinJWTMiddleware) ParseTokenString(token string) (*jwt.Token, error) {
 	})
 }
 
-
 func (mw *GinJWTMiddleware) unauthorized(c *gin.Context, code int, message string) {
 	c.Header("WWW-Authenticate", "JWT realm="+mw.Realm)
 	if !mw.DisabledAbort {
@@ -641,7 +636,6 @@ func (mw *GinJWTMiddleware) unauthorized(c *gin.Context, code int, message strin
 
 	mw.Unauthorized(c, code, message)
 }
-
 
 // ExtractClaims help to extract the JWT claims
 func ExtractClaims(c *gin.Context) MapClaims {
@@ -666,8 +660,6 @@ func ExtractClaimsFromToken(token *jwt.Token) MapClaims {
 
 	return claims
 }
-
-
 
 // GetToken help to get the JWT token string
 func GetToken(c *gin.Context) string {

@@ -3,8 +3,8 @@ package worker
 import (
 	"context"
 	"errors"
-	"github.com/RichardKnop/machinery/v1/tasks"
 	"fs/pkg/logger"
+	"github.com/RichardKnop/machinery/v1/tasks"
 	"os/exec"
 	"syscall"
 )

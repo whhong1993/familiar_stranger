@@ -1,9 +1,9 @@
 package handler
 
 import (
+	"fs/tools/config"
 	"github.com/gin-gonic/gin"
 	"github.com/unrolled/secure"
-	"fs/tools/config"
 )
 
 func TlsHandler() gin.HandlerFunc {

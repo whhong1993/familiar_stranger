@@ -3,9 +3,9 @@ package system
 type User struct {
 	IdentityKey string
 
-	UserName string
+	UserName  string
 	FirstName string
-	LastName string
+	LastName  string
 
 	Role string
 }
@@ -26,5 +26,3 @@ type LoginM struct {
 type SysUserId struct {
 	UserId int `gorm:"primary_key;AUTO_INCREMENT" json:"UserId"`
 }
-
-

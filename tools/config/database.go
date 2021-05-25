@@ -3,10 +3,10 @@ package config
 import "github.com/spf13/viper"
 
 type Database struct {
-	Dbtype string
-	Host string
-	Port int
-	Name string
+	Dbtype   string
+	Host     string
+	Port     int
+	Name     string
 	Username string
 	Password string
 }
